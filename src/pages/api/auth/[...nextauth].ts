@@ -13,12 +13,6 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    redirect: async (url, _) => {
-      if (url === '/api/auth/signin') {
-        return Promise.resolve('/profile')
-      }
-      return Promise.resolve('/api/auth/callback')
-    },
     async session(session) {
       try {
         const userActiveSubscription = await fauna.query(
