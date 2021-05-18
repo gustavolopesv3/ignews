@@ -17,7 +17,7 @@ export default NextAuth({
       if (url === '/api/auth/signin') {
         return Promise.resolve('/profile')
       }
-      return Promise.resolve('/api/auth/signin')
+      return Promise.resolve('/api/auth/callback')
     },
     async session(session) {
       try {
